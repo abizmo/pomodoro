@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: ${(props) => props.theme.colors.light.red.bg};
-    color: ${({ theme }) => theme.colors.light.red[900]};
+    color: ${({ theme }) => theme.colors.light.red.text};
     font-family: ${({ theme }) => theme.fontFamily.sans};
   }
 `;
