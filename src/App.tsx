@@ -1,12 +1,10 @@
-import { ThemeProvider } from 'styled-components';
-import GlobalStyle, { myTheme } from './theme/GlobalStyle';
+import Theme from './theme';
 
 function App() {
   return (
-    <ThemeProvider theme={myTheme}>
-      <GlobalStyle />
+    <Theme>
       <h1>Hola mundo</h1>
-    </ThemeProvider>
+    </Theme>
   );
 }
 

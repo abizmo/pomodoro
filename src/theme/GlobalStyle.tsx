@@ -1,76 +1,15 @@
-import { DefaultTheme, createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-const reset = css`
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    font: inherit;
-  }
-
-  html:focus-within {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  img,
-  picture,
-  svg {
-    display: block;
-    max-width: 100%;
-  }
-
-  ul[role='list'],
-  ol[role='list'] {
-    list-style: none;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-      scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-`;
+import resetCSS from './reset';
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
+  ${resetCSS}
+
   body {
-    background-color: ${(props) => props.theme.colors.secondary};
+    background-color: ${(props) => props.theme.colors.light.red[50]};
+    color: ${({ theme }) => theme.colors.light.red[900]};
+    font-family: ${({ theme }) => theme.fontFamily.sans};
   }
 `;
-
-export const myTheme: DefaultTheme = {
-  borderRadius: '5px',
-
-  colors: {
-    main: 'cyan',
-    secondary: 'white',
-  },
-};
 
 export default GlobalStyle;
