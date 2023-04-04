@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
   ${resetCSS}
 
   body {
-    background-color: ${(props) => props.theme.colors.light.red[50]};
+    background-color: ${(props) => props.theme.colors.light.red.bg};
     color: ${({ theme }) => theme.colors.light.red[900]};
     font-family: ${({ theme }) => theme.fontFamily.sans};
   }
