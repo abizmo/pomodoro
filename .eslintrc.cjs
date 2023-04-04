@@ -10,6 +10,7 @@ module.exports = {
     'standard',
     'eslint-config-prettier',
     'prettier',
+    'plugin:security/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,7 +25,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'security'],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     semi: 'off',
