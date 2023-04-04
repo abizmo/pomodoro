@@ -17,6 +17,11 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
