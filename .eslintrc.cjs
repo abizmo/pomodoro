@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'eslint:recommended',
@@ -11,6 +12,8 @@ module.exports = {
     'eslint-config-prettier',
     'prettier',
     'plugin:security/recommended',
+    'plugin:testing-library/dom',
+    'plugin:testing-library/react',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -25,7 +28,13 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react', '@typescript-eslint', 'security'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'testing-library',
+    'jest-dom',
+    'security',
+  ],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     semi: 'off',
