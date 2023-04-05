@@ -15,6 +15,9 @@ module.exports = {
     'plugin:testing-library/dom',
     'plugin:testing-library/react',
   ],
+  globals: {
+    JSX: true,
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
