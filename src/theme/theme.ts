@@ -1,6 +1,11 @@
 import { type DefaultTheme } from 'styled-components';
 
 const theme: DefaultTheme = {
+  borderRadius: {
+    sm: '0.5rem',
+    md: '1.5rem',
+    lg: '2rem',
+  },
   colors: {
     light: {
       blue: {
@@ -60,13 +65,32 @@ const theme: DefaultTheme = {
     sans: 'Roboto Flex, sans-serif',
   },
   fontSizes: {
-    sm: '12px',
-    md: '16px',
-    lg: '24px',
-    xl: '256px',
+    sm: '.75rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '16rem',
   },
   lineHeight: {
     tight: '85%',
+  },
+  padding: {
+    lg: {
+      inline: '3rem',
+      block: '2rem',
+    },
+    md: {
+      inline: '1.5rem',
+      block: '1.5rem',
+    },
+    sm: {
+      inline: '0.5rem',
+      block: '0.5rem',
+    },
+  },
+  width: {
+    lg: '2rem',
+    md: '2rem',
+    sm: '1.125rem',
   },
 };
 

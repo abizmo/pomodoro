@@ -1,5 +1,12 @@
 import 'styled-components';
 
+export enum Sizes {
+  sm = 'sm',
+  md = 'md',
+  lg = 'lg',
+  xl = 'xl',
+}
+
 // and extend them!
 declare module 'styled-components' {
   type Color = {
@@ -16,17 +23,18 @@ declare module 'styled-components' {
     border: string;
   };
 
-  enum Sizes {
-    sm = 'sm',
-    md = 'md',
-    lg = 'lg',
-    xl = 'xl',
-  }
-
   enum FontFamilies {
     sans = 'sans',
   }
+
+  type Padding = {
+    inline: string;
+    block: string;
+  };
   export interface DefaultTheme {
+    borderRadius: {
+      [key in Sizes]?: string;
+    };
     colors: {
       light: {
         blue: Color;
@@ -49,6 +57,12 @@ declare module 'styled-components' {
     };
     lineHeight: {
       tight: string;
+    };
+    padding: {
+      [key in Sizes]?: Padding;
+    };
+    width: {
+      [key in Sizes]?: string;
     };
   }
 }
