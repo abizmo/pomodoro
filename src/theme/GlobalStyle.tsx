@@ -6,9 +6,9 @@ const GlobalStyle = createGlobalStyle`
   ${resetCSS}
 
   body {
-    background-color: ${(props) => props.theme.colors.light.red.bg};
-    color: ${({ theme }) => theme.colors.light.red.text};
-    font-family: ${({ theme }) => theme.fontFamily.sans};
+    background-color: ${({ theme }) => theme.colors.bg};
+    color: ${({ theme }) => theme.colors.text};
+    font-family: ${({ theme }) => theme.fontFamily?.sans || 'sans-serif'};
   }
 `;
 

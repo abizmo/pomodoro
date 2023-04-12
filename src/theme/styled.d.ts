@@ -2,19 +2,26 @@ import 'styled-components';
 
 // and extend them!
 declare module 'styled-components' {
-  type Color = {
-    bg: string;
+  interface ColorSchema {
+    id: string;
     text: string;
+    bg: string;
+    surface: string;
     'text-secondary'?: string;
-    main: string;
-    secondary: string;
-  };
+    'bg-secondary'?: string;
+    'surface-secondary'?: string;
+  }
 
-  type NeutralColor = {
-    off: string;
-    line: string;
-    border: string;
-  };
+  interface Shadow {
+    [key: number]: string;
+  }
+
+  interface ColorMode extends Omit<ColorSchema, 'id'> {
+    shadows: Shadow;
+  }
+
+  type Schema = 'red' | 'green' | 'blue';
+  type Mode = 'light' | 'dark';
 
   enum Sizes {
     sm = 'sm',
@@ -26,29 +33,19 @@ declare module 'styled-components' {
   enum FontFamilies {
     sans = 'sans',
   }
-  export interface DefaultTheme {
-    colors: {
-      light: {
-        blue: Color;
-        green: Color;
-        red: Color;
-        neutral: NeutralColor;
-      };
-      dark: {
-        blue: Color;
-        green: Color;
-        red: Color;
-        neutral: NeutralColor;
-      };
-    };
-    fontFamily: {
+
+  interface Commons {
+    fontFamily?: {
       [key in FontFamilies]: string;
     };
-    fontSizes: {
+    fontSizes?: {
       [key in Sizes]: string;
     };
-    lineHeight: {
+    lineHeight?: {
       tight: string;
     };
+  }
+  export interface DefaultTheme extends Commons {
+    colors: ColorMode;
   }
 }
